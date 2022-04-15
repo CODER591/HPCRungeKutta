@@ -6,7 +6,7 @@ FINAL_LINE= $(CC) $(STANDARD) $(INCLUDE)
 
 
 
-all: build second_order main
+all: build second_order forth_order main
 	$(FINAL_LINE) ./build/*.o -o final.out
 	mv *.out ./build
 
@@ -18,6 +18,9 @@ second_order:
 	$(FINAL_LINE) second/runge_second_order.h second/runge_second_order.cc -c
 	mv *.o ./build
 
+forth_order:
+	$(FINAL_LINE) forth/equation/runge_forth_order.h forth/equation/runge_forth_order.cc -c
+	mv *.o ./build
 
 # Service targets
 
