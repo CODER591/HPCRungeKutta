@@ -1,6 +1,6 @@
 
 #include "common/definitions.h"
-#include "common/functions.h"
+#include "common/examples.h"
 #include "second/runge_second_order.h"
 
 #include <functional>

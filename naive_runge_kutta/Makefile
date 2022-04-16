@@ -6,33 +6,34 @@ FINAL_LINE= $(CC) $(STANDARD) $(INCLUDE)
 
 
 
-all: final_build
+all: mk_build_dir final_build
 
 final_build: main
-	mkdir -p build
-	$(FINAL_LINE) ./build/*.o -o final.out
-	mv *.out ./build
+	$(FINAL_LINE) ./BUILD/*.o -o final.out
+	mv *.out ./BUILD/
 
-main: examples
+main: prepared_tests
 	$(FINAL_LINE) main.cpp -c
-	mv *.o ./build
+	mv *.o ./BUILD/
 
-examples: second_order forth_order
-	$(FINAL_LINE) examples/examples.h examples/examples.cc -c
-	mv *.o ./build
+prepared_tests: second_order forth_order
+	$(FINAL_LINE) tests/tests.h tests/tests.cc -c
+	mv *.o ./BUILD/
 
 second_order:
 	$(FINAL_LINE) second/runge_second_order.h second/runge_second_order.cc -c
-	mv *.o ./build
+	mv *.o ./BUILD/
 
 forth_order:
 	$(FINAL_LINE) forth/equation/runge_forth_order.h forth/equation/runge_forth_order.cc -c
-	mv *.o ./build
+	mv *.o ./BUILD/
 
 # Service targets
+mk_build_dir:
+	mkdir -p BUILD
 
 run: final_build
-	./build/final.out
+	./BUILD/final.out
 
 clean:
-	rm -rf build
+	rm -rf ./BUILD/

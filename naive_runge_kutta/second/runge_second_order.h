@@ -4,7 +4,7 @@
 #include <functional>
 
 #include "common/definitions.h"
-#include "common/functions.h"
+#include "common/examples.h"
 
 //formula (11.5)
 double runge_kutta_2nd_order_1f_(const double x_begin,

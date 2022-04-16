@@ -1,6 +1,6 @@
 
 #include "common/definitions.h"
-#include "common/functions.h"
+#include "common/examples.h"
 #include "forth/equation/runge_forth_order.h"
 
 #include <functional>

@@ -1,10 +1,10 @@
-#include "examples/examples.h"
+#include "tests/tests.h"
 
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
 
-#include "common/functions.h"
+#include "common/examples.h"
 #include "second/runge_second_order.h"
 #include "forth/equation/runge_forth_order.h"
 
