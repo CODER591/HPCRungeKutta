@@ -26,6 +26,7 @@ second_order:
 
 forth_order:
 	$(FINAL_LINE) forth/equation/runge_forth_order.h forth/equation/runge_forth_order.cc -c
+	$(FINAL_LINE) forth/system/sys_runge_forth_order.h forth/system/sys_runge_forth_order.cc -c
 	mv *.o ./BUILD/
 
 # Service targets
