@@ -6,12 +6,16 @@ FINAL_LINE= $(CC) $(STANDARD) $(INCLUDE)
 
 
 
-all: build second_order forth_order main
+all: build main
 	$(FINAL_LINE) ./build/*.o -o final.out
 	mv *.out ./build
 
-main:
+main: examples
 	$(FINAL_LINE) main.cpp -c
+	mv *.o ./build
+
+examples: second_order forth_order
+	$(FINAL_LINE) examples/examples.h examples/examples.cc -c
 	mv *.o ./build
 
 second_order:
