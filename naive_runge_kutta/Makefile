@@ -6,7 +6,10 @@ FINAL_LINE= $(CC) $(STANDARD) $(INCLUDE)
 
 
 
-all: build main
+all: final_build
+
+final_build: main
+	mkdir -p build
 	$(FINAL_LINE) ./build/*.o -o final.out
 	mv *.out ./build
 
@@ -28,8 +31,8 @@ forth_order:
 
 # Service targets
 
-build:
-	mkdir build
+run: final_build
+	./build/final.out
 
 clean:
 	rm -rf build

@@ -9,7 +9,7 @@
 #include "forth/equation/runge_forth_order.h"
 
 void mock_example3() {
-    Example3 functions;
+    Example5 functions;
     
     double N = 10000;                 //Amount of the intervals of [a,b]
     double x_begin = functions.get_x_begin();    // a

@@ -14,12 +14,12 @@ struct AbstractExample {
     virtual double f_shtrih(const double x, const double y) = 0;
     virtual ~AbstractExample() {}
 
-    double get_step() {
+    double get_ab_interval_step() {
         return 0.5;
     }
 
     double get_x_end() {
-        return get_x_begin() + get_step();
+        return get_x_begin() + get_ab_interval_step();
     }
 };
 
@@ -47,6 +47,17 @@ struct Example3 : public AbstractExample {
 
 /* page 330, example5 */
 struct Example5 : public AbstractExample {
+
+    double get_x_begin() override {
+        // 0
+        return 0;
+    }
+
+    double get_y0() override {
+        // y(0) = 3;
+        return 3;
+    }
+
     double f_sol(double x) override {
         return 2 * std::exp(x) - 2*x + 1;
     }
