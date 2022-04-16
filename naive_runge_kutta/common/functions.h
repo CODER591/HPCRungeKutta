@@ -99,6 +99,10 @@ struct InternetExample : public AbstractExample {
         return 0;
     }
 
+    double get_x_end() override {
+        return 2;
+    }
+
     double get_y0() override {
         // y(0) = 0.5;
         return 0.5;
