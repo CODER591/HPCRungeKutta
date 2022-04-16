@@ -20,7 +20,7 @@ double runge_kutta_4rh_order_1f_(const double x_begin,
       double k2 = h * function->f_shtrih(x_n + h/2.0, y_n + k1/2.0);
       double k3 = h * function->f_shtrih(x_n + h/2.0, y_n + k2/2.0);
       double k4 = h * function->f_shtrih(x_n + h, y_n + k3);
-      y_n = y_n + one_sixth * (k1+k2+k3+k4);
+      y_n = y_n + one_sixth*(k1 + 2.0*k2 + 2.0*k3 + k4);
   }
   return y_n;
 }
