@@ -25,7 +25,7 @@ void mock_example3() {
     // std::cout << "Runge-kutta 4rh order: " << runge_kutta_4rh_order_1f_(x_begin, x_end, y0, N, &functions) <<std::endl;
     // std::cout << "Strict solution: " << functions.f_sol(x_end) <<std::endl;
 
-    SystemExample1 functions;
+    BrusselatorSystem functions;
 
     std::pair<double, double> result = system_ode_runge_kutta_4rh_order_1f_(0, &functions);
     std::cout<< "Runge-kutta 4rh order" << std::endl;
