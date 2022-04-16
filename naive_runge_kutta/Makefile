@@ -37,3 +37,5 @@ run: final_build
 
 clean:
 	rm -rf ./BUILD/
+	rm -rf ./*/*.gch
+	rm -rf ./*/*/*.gch
