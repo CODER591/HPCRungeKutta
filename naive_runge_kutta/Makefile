@@ -9,7 +9,7 @@ FINAL_LINE= $(CC) $(STANDARD) $(INCLUDE)
 all: mk_build_dir final_build
 
 final_build: main
-	$(FINAL_LINE) ./BUILD/*.o -o final.out
+	$(FINAL_LINE) ./BUILD/*.o -lpthread -o final.out
 	mv *.out ./BUILD/
 
 main: prepared_tests
