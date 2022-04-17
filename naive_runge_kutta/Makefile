@@ -33,7 +33,7 @@ forth_order:
 mk_build_dir:
 	mkdir -p BUILD
 
-run: final_build
+run: mk_build_dir final_build
 	./BUILD/final.out
 
 clean:
